@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiverse IIT - Premier Coaching for JEE, NEET & Foundation</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            multiverse: {
+              teal: '#0D9488',
+              tealLight: '#F0FDFA',
+              tealHover: '#0F766E',
+              pink: '#FF1A75',
+              pinkLight: '#FFF1F5',
+              blue: '#0084FF',
+              dark: '#0B132B',
+              cardGlass: 'rgba(255, 255, 255, 0.75)',
+            }
+          },
+          boxShadow: {
+            'skeuo': '0 8px 20px rgba(13, 148, 136, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.8), inset 0 -3px 6px rgba(0, 0, 0, 0.1)',
+            'skeuo-pink': '0 8px 20px rgba(255, 26, 117, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.8), inset 0 -3px 6px rgba(0, 0, 0, 0.15)',
+            'skeuo-card': '0 12px 30px -10px rgba(13, 148, 136, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            'glass': '0 8px 32px 0 rgba(13, 148, 136, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Glassmorphism & Animations */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+    }
+
+    /* Skeuomorphic tactile button effect */
+    .btn-skeuo {
+      background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+      box-shadow: 0 6px 15px rgba(13, 148, 136, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.45), inset 0 -2px 3px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+    .btn-skeuo:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(13, 148, 136, 0.45), inset 0 2px 3px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-skeuo:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-skeuo-pink {
+      background: linear-gradient(135deg, #FF1A75 0%, #E0005E 100%);
+      box-shadow: 0 6px 15px rgba(255, 26, 117, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.45), inset 0 -2px 3px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+    .btn-skeuo-pink:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(255, 26, 117, 0.45), inset 0 2px 3px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-teal-50/50 via-slate-50 to-blue-50/40 text-slate-800 antialiased font-sans">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-multiverse-teal to-blue-500 p-2 text-white shadow-lg flex items-center justify-center transform group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-atom text-xl animate-spin" style="animation-duration: 12s;"></i>
+        </div>
+        <div>
+          <span class="text-xl sm:text-2xl font-black font-heading text-multiverse-dark tracking-tight">Multiverse <span class="text-multiverse-teal">IIT</span></span>
+          <span class="block text-[10px] uppercase font-bold tracking-widest text-multiverse-pink">JEE • NEET • Foundation</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+        <a href="#home" class="text-multiverse-teal font-bold transition-colors">Home</a>
+        <a href="#about" class="hover:text-multiverse-teal transition-colors">About</a>
+        <a href="#courses" class="hover:text-multiverse-teal transition-colors">Programs</a>
+        <a href="#faculty" class="hover:text-multiverse-teal transition-colors">Faculty</a>
+        <a href="#results" class="hover:text-multiverse-teal transition-colors">Results</a>
+        <a href="#contact" class="hover:text-multiverse-teal transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-3">
+        <button onclick="openModal('Book Free Demo Session')" class="btn-skeuo text-white font-bold px-6 py-2.5 rounded-xl text-sm tracking-wide flex items-center gap-2">
+          <span>Book Free Demo</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-white/80 border border-slate-200 text-slate-700 shadow-sm">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden glass-panel border-b border-slate-200 px-6 py-4 space-y-3 font-semibold text-slate-700">
+      <a href="#home" onclick="toggleMobileMenu()" class="block py-1 text-multiverse-teal">Home</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-1 hover:text-multiverse-teal">About</a>
+      <a href="#courses" onclick="toggleMobileMenu()" class="block py-1 hover:text-multiverse-teal">Programs</a>
+      <a href="#faculty" onclick="toggleMobileMenu()" class="block py-1 hover:text-multiverse-teal">Faculty</a>
+      <a href="#results" onclick="toggleMobileMenu()" class="block py-1 hover:text-multiverse-teal">Results</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block py-1 hover:text-multiverse-teal">Contact</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <!-- Decorative Glowing Orbs -->
+    <div class="absolute top-10 left-10 w-72 h-72 bg-teal-300/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-pink-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-teal-50 border border-teal-200/80 text-multiverse-teal px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-multiverse-teal animate-ping"></span>
+            Admissions Open for 2026 – 2027 Batches
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading text-multiverse-dark leading-[1.15]">
+            Master JEE, NEET & Foundation Across <span class="bg-gradient-to-r from-multiverse-teal via-teal-600 to-multiverse-blue bg-clip-text text-transparent">Realms of Excellence</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Empowering ambitious minds with conceptual clarity, rigorous problem-solving frameworks, and elite mentorship to conquer India's toughest entrance exams.
+          </p>
+
+          <!-- Quick Feature Badges -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+            <div class="glass-panel px-4 py-2 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-brain text-multiverse-teal text-sm"></i> Conceptual Mastery
+            </div>
+            <div class="glass-panel px-4 py-2 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-user-graduate text-multiverse-pink text-sm"></i> Expert Faculty
+            </div>
+            <div class="glass-panel px-4 py-2 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-chart-line text-blue-500 text-sm"></i> AI-Driven Testing
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+            <button onclick="openModal('Enroll in Multiverse IIT')" class="btn-skeuo text-white font-bold px-8 py-4 rounded-2xl text-base flex items-center gap-3">
+              <span>Enroll Now</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="#courses" class="glass-panel hover:bg-white text-slate-700 font-bold px-8 py-4 rounded-2xl border border-slate-200/80 shadow-sm transition-all text-base flex items-center gap-2">
+              <i class="fa-solid fa-book-open text-multiverse-teal">Explore Courses</i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual (Glassmorphic Card Deck) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Main Hero Card -->
+            <div class="glass-panel p-6 rounded-3xl shadow-skeuo-card border border-white/80 relative overflow-hidden animate-float">
+              <div class="absolute -right-10 -top-10 w-32 h-32 bg-teal-400/20 rounded-full blur-2xl"></div>
+              
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-2xl bg-teal-500/10 text-multiverse-teal flex items-center justify-center font-bold text-xl">
+                    <i class="fa-solid fa-award"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-black text-slate-800 text-lg">Top Achievers</h3>
+                    <p class="text-xs text-slate-500 font-semibold">IIT-JEE & NEET Proven Track Record</p>
+                  </div>
+                </div>
+                <span class="px-3 py-1 bg-teal-100 text-multiverse-teal text-xs font-bold rounded-full">Batch 2025-26</span>
+              </div>
+
+              <!-- Stats Grid Inside Card -->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-white/80 p-4 rounded-2xl border border-teal-100 text-center shadow-sm">
+                  <span class="block text-2xl font-black text-multiverse-teal">99.4+</span>
+                  <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">JEE Percentile</span>
+                </div>
+                <div class="bg-white/80 p-4 rounded-2xl border border-pink-100 text-center shadow-sm">
+                  <span class="block text-2xl font-black text-multiverse-pink">680+</span>
+                  <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">NEET Score Avg</span>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-multiverse-teal to-teal-700 text-white p-4 rounded-2xl flex items-center justify-between shadow-md">
+                <div>
+                  <span class="text-xs font-medium text-teal-100 block">Next Scholarship Test</span>
+                  <span class="font-bold text-sm">Sunday, 10:00 AM</span>
+                </div>
+                <button onclick="openModal('Scholarship Test Registration')" class="bg-white text-multiverse-teal font-bold px-4 py-2 rounded-xl text-xs hover:bg-teal-50 transition-colors">
+                  Register Free
+                </button>
+              </div>
+            </div>
+
+            <!-- Floating Mini Badge -->
+            <div class="absolute -bottom-6 -left-6 glass-panel px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-white/80">
+              <div class="w-10 h-10 rounded-xl bg-pink-500 text-white flex items-center justify-center font-black text-base shadow-md">
+                <i class="fa-solid fa-fire"></i>
+              </div>
+              <div>
+                <span class="block text-[10px] font-black uppercase text-multiverse-pink tracking-wider">100% Mentorship</span>
+                <span class="text-xs font-bold text-slate-700">Personalized Doubt Solving</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Trust Metrics Bar -->
+      <div class="mt-16 glass-panel rounded-3xl p-6 shadow-skeuo-card border border-white/80">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200/60">
+          <div class="p-2">
+            <span class="text-3xl lg:text-4xl font-black text-multiverse-teal font-heading block">15+</span>
+            <span class="text-xs font-bold text-slate-600 mt-1 block uppercase tracking-wider">Years of Excellence</span>
+          </div>
+          <div class="p-2">
+            <span class="text-3xl lg:text-4xl font-black text-multiverse-pink font-heading block">5,000+</span>
+            <span class="text-xs font-bold text-slate-600 mt-1 block uppercase tracking-wider">Successful Selections</span>
+          </div>
+          <div class="p-2">
+            <span class="text-3xl lg:text-4xl font-black text-multiverse-blue font-heading block">25:1</span>
+            <span class="text-xs font-bold text-slate-600 mt-1 block uppercase tracking-wider">Student-Faculty Ratio</span>
+          </div>
+          <div class="p-2">
+            <span class="text-3xl lg:text-4xl font-black text-purple-600 font-heading block">100%</span>
+            <span class="text-xs font-bold text-slate-600 mt-1 block uppercase tracking-wider">Concept Clarity Focus</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COURSES / PROGRAMS ==================== -->
+  <section id="courses" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs uppercase font-extrabold tracking-widest text-multiverse-teal mb-2">Our Academic Programs</h2>
+        <h3 class="text-3xl sm:text-4xl font-black font-heading text-multiverse-dark">Designed for Absolute Rankers</h3>
+        <p class="text-slate-600 font-medium text-sm mt-2">Comprehensive curriculum tailored to build strong fundamentals and advanced problem-solving agility.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Program 1: JEE Advanced & Main -->
+        <div class="glass-panel rounded-3xl p-8 shadow-skeuo-card border border-white/80 hover:border-teal-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-teal-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-atom"></i>
+            </div>
+            <h4 class="text-xl font-black font-heading text-multiverse-dark mb-3">JEE (Advanced & Main)</h4>
+            <p class="text-sm text-slate-600 font-medium leading-relaxed mb-6">
+              Rigorous physics, chemistry, and mathematics training with high-level problem sets, test series, and rank-boosting analytical workshops.
+            </p>
+            <ul class="space-y-2.5 text-xs font-bold text-slate-700 mb-8">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-teal"></i> Daily Practice Problem (DPP) Sheets</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-teal"></i> All India Mock Test Series</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-teal"></i> 1-on-1 Mentorship Sessions</li>
+            </ul>
+          </div>
+          <button onclick="openModal('JEE Program Inquiry')" class="w-full btn-skeuo text-white font-bold py-3 rounded-xl text-sm shadow-md">
+            Enquire for JEE
+          </button>
+        </div>
+
+        <!-- Program 2: NEET-UG Medical -->
+        <div class="glass-panel rounded-3xl p-8 shadow-skeuo-card border border-white/80 hover:border-pink-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-multiverse-pink text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h4 class="text-xl font-black font-heading text-multiverse-dark mb-3">NEET-UG Medical</h4>
+            <p class="text-sm text-slate-600 font-medium leading-relaxed mb-6">
+              In-depth NCERT mastery combined with conceptual Biology, Physics, and Chemistry modules designed for top medical college admissions.
+            </p>
+            <ul class="space-y-2.5 text-xs font-bold text-slate-700 mb-8">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-pink"></i> Line-by-Line NCERT Biology Decoding</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-pink"></i> Speed & Accuracy Drills</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-pink"></i> Regular Parent-Teacher Updates</li>
+            </ul>
+          </div>
+          <button onclick="openModal('NEET Program Inquiry')" class="w-full btn-skeuo-pink text-white font-bold py-3 rounded-xl text-sm shadow-md">
+            Enquire for NEET
+          </button>
+        </div>
+
+        <!-- Program 3: Foundation (Class 8th to 10th) -->
+        <div class="glass-panel rounded-3xl p-8 shadow-skeuo-card border border-white/80 hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-multiverse-blue text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h4 class="text-xl font-black font-heading text-multiverse-dark mb-3">Foundation (Class 8 - 10)</h4>
+            <p class="text-sm text-slate-600 font-medium leading-relaxed mb-6">
+              Early cognitive shaping for Olympiads (NSEJS, NTSE, KVPY) and school board excellence with robust analytical thinking foundations.
+            </p>
+            <ul class="space-y-2.5 text-xs font-bold text-slate-700 mb-8">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-blue"></i> Olympiad & Scholastic Focus</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-blue"></i> Logical Reasoning & Mental Ability</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-multiverse-blue"></i> Stress-Free Learning Environment</li>
+            </ul>
+          </div>
+          <button onclick="openModal('Foundation Program Inquiry')" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 rounded-xl text-sm shadow-md transition-all">
+            Enquire for Foundation
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT DIRECTOR & TEACHING METHODOLOGY ==================== -->
+  <section id="about" class="py-20 bg-white/60 relative border-y border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-multiverse-teal px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+            Leadership & Vision
+          </div>
+          <h3 class="text-3xl sm:text-4xl font-black font-heading text-multiverse-dark">
+            Founded on Passion for Teaching & Scientific Rigor
+          </h3>
+          <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+            At Multiverse IIT, we believe coaching is not about rote memorization—it is about awakening curiosity and instilling structured problem-solving instincts. Every lecture is crafted to simplify complex phenomena into intuitive mental models.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div class="glass-panel p-4 rounded-2xl border border-teal-100 shadow-sm">
+              <h5 class="font-heading font-black text-multiverse-teal text-lg">Interactive Pedagogy</h5>
+              <p class="text-xs text-slate-600 mt-1">Live visual demonstrations and real-world engineering/medical correlations.</p>
+            </div>
+            <div class="glass-panel p-4 rounded-2xl border border-pink-100 shadow-sm">
+              <h5 class="font-heading font-black text-multiverse-pink text-lg">Doubt-Free Zone</h5>
+              <p class="text-xs text-slate-600 mt-1">Dedicated mentor hours every single day to clear student roadblocks.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Director Quote Card -->
+        <div class="lg:col-span-6">
+          <div class="glass-panel p-8 sm:p-10 rounded-3xl shadow-skeuo-card border border-white relative">
+            <div class="absolute top-6 right-8 text-teal-200 text-6xl font-serif pointer-events-none">“</div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-multiverse-teal to-blue-500 p-1 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Director Faculty" class="w-full h-full object-cover rounded-xl">
+              </div>
+              <div>
+                <h4 class="font-heading font-black text-lg text-slate-800">Prof. Arvind Sharma</h4>
+                <span class="text-xs font-bold text-multiverse-teal uppercase tracking-wider">Chief Academic Director & Founder</span>
+              </div>
+            </div>
+            <p class="text-slate-700 font-semibold italic text-sm sm:text-base leading-relaxed">
+              "Our goal at Multiverse IIT is simple: build a sanctuary where students don't just prepare for exams, but discover their true potential as future scientists, engineers, and doctors."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS / SUCCESS STORIES ==================== -->
+  <section id="results" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs uppercase font-extrabold tracking-widest text-multiverse-teal mb-2">Wall of Success</h2>
+        <h3 class="text-3xl sm:text-4xl font-black font-heading text-multiverse-dark">What Our Rankers & Parents Say</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="glass-panel rounded-3xl p-6 shadow-skeuo-card border border-white/80 space-y-4">
+          <div class="flex items-center gap-1 text-amber-400 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 font-medium italic leading-relaxed">
+            "The personal attention and conceptual clarity I received at Multiverse IIT changed my approach to physics. I secured 99.7 percentile in JEE Main!"
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-teal-100 text-multiverse-teal flex items-center justify-center font-bold">AK</div>
+            <div>
+              <h5 class="text-xs font-black text-slate-800">Aditya Kulkarni</h5>
+              <span class="text-[10px] font-bold text-slate-500">JEE Advanced AIR 1142</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="glass-panel rounded-3xl p-6 shadow-skeuo-card border border-white/80 space-y-4">
+          <div class="flex items-center gap-1 text-amber-400 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 font-medium italic leading-relaxed">
+            "Biology and Chemistry faculty are simply world-class. The regular mock test analysis helped my daughter overcome her exam anxiety and score 695 in NEET."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-pink-100 text-multiverse-pink flex items-center justify-center font-bold">SP</div>
+            <div>
+              <h5 class="text-xs font-black text-slate-800">Mrs. Sunita Patel</h5>
+              <span class="text-[10px] font-bold text-slate-500">Parent of NEET Ranker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="glass-panel rounded-3xl p-6 shadow-skeuo-card border border-white/80 space-y-4">
+          <div class="flex items-center gap-1 text-amber-400 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 font-medium italic leading-relaxed">
+            "Starting early in the Foundation batch gave me an unbeatable edge in problem solving. The teachers make difficult math concepts feel like a game."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-multiverse-blue flex items-center justify-center font-bold">RV</div>
+            <div>
+              <h5 class="text-xs font-black text-slate-800">Rohan Verma</h5>
+              <span class="text-[10px] font-bold text-slate-500">NSEJS Qualified & Class 10</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="contact" class="bg-multiverse-dark text-white pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-multiverse-teal flex items-center justify-center text-white font-bold">
+              <i class="fa-solid fa-atom"></i>
+            </div>
+            <div>
+              <span class="text-xl font-black text-white tracking-tight">Multiverse <span class="text-multiverse-teal">IIT</span></span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 font-medium leading-relaxed">
+            The ultimate destination for JEE, NEET and Foundation coaching. Shaping future innovators with rigorous mentorship and teal-standard education.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-xs font-black uppercase tracking-wider text-slate-200 mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs font-semibold text-slate-400">
+            <li><a href="#home" class="hover:text-multiverse-teal transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-multiverse-teal transition-colors">About Faculty</a></li>
+            <li><a href="#courses" class="hover:text-multiverse-teal transition-colors">Programs</a></li>
+            <li><a href="#results" class="hover:text-multiverse-teal transition-colors">Results & Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Programs -->
+        <div>
+          <h4 class="text-xs font-black uppercase tracking-wider text-slate-200 mb-4">Programs</h4>
+          <ul class="space-y-2 text-xs font-semibold text-slate-400">
+            <li><a href="#courses" class="hover:text-multiverse-teal transition-colors">JEE Advanced & Main</a></li>
+            <li><a href="#courses" class="hover:text-multiverse-teal transition-colors">NEET-UG Medical</a></li>
+            <li><a href="#courses" class="hover:text-multiverse-teal transition-colors">Foundation (Class 8-10)</a></li>
+            <li><a href="#courses" class="hover:text-multiverse-teal transition-colors">Crash Courses & Test Series</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-xs font-black uppercase tracking-wider text-slate-200 mb-4">Contact Us</h4>
+          <ul class="space-y-3 text-xs font-semibold text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-multiverse-teal mt-0.5"></i>
+              <span>Multiverse Tower, Knowledge Park, Education Hub</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-multiverse-pink"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-blue-400"></i>
+              <span>admissions@multiverseiit.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-8 text-center text-xs font-semibold text-slate-500">
+        © 2026 Multiverse IIT. All Rights Reserved. Designed with Glass & Skeuomorphic Excellence.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE ENQUIRY MODAL ==================== -->
+  <div id="enquiryModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl max-w-md w-full p-8 shadow-2xl relative border border-white transform transition-all scale-95 opacity-0 duration-300" id="modalCard">
+      
+      <!-- Close Button -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 bg-teal-100 text-multiverse-teal rounded-full flex items-center justify-center mx-auto mb-2 text-xl shadow-inner">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h3 id="modalTitle" class="text-2xl font-black font-heading text-multiverse-dark">Book Free Demo Class</h3>
+        <p class="text-xs text-slate-500 font-bold mt-1">Take your first step towards top IIT/Medical ranks</p>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-black text-slate-700 mb-1">Student's Full Name</label>
+          <input type="text" required placeholder="Enter student name" class="w-full text-xs font-semibold px-4 py-3 rounded-xl glass-panel border border-slate-200 focus:outline-none focus:border-multiverse-teal">
+        </div>
+
+        <div>
+          <label class="block text-xs font-black text-slate-700 mb-1">Contact Phone Number</label>
+          <input type="tel" required placeholder="+91 98765 00000" class="w-full text-xs font-semibold px-4 py-3 rounded-xl glass-panel border border-slate-200 focus:outline-none focus:border-multiverse-teal">
+        </div>
+
+        <div>
+          <label class="block text-xs font-black text-slate-700 mb-1">Select Program / Target</label>
+          <select class="w-full text-xs font-semibold px-4 py-3 rounded-xl glass-panel border border-slate-200 focus:outline-none focus:border-multiverse-teal bg-white/90">
+            <option>JEE (Advanced & Main)</option>
+            <option>NEET-UG Medical</option>
+            <option>Foundation (Class 8th - 10th)</option>
+            <option>Scholarship Test Inquiry</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full btn-skeuo text-white font-bold py-3.5 rounded-xl text-xs shadow-md mt-2 transition-all">
+          Submit Enquiry
+        </button>
+      </form>
+
+      <!-- Success Notice -->
+      <div id="formSuccessMsg" class="hidden mt-4 p-3 rounded-xl bg-teal-50 text-multiverse-teal text-xs font-bold text-center border border-teal-200">
+        <i class="fa-solid fa-circle-check mr-1"></i> Thank you! Our academic counselor will call you within 2 hours.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Modal Control
+    function openModal(title = "Book Free Demo Session") {
+      document.getElementById('modalTitle').textContent = title;
+      const modal = document.getElementById('enquiryModal');
+      const card = document.getElementById('modalCard');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        card.classList.remove('scale-95', 'opacity-0');
+        card.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('enquiryModal');
+      const card = document.getElementById('modalCard');
+      card.classList.remove('scale-100', 'opacity-100');
+      card.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.getElementById('formSuccessMsg').classList.add('hidden');
+      }, 200);
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccessMsg').classList.remove('hidden');
+      setTimeout(() => {
+        closeModal();
+      }, 2400);
+    }
+  </script>
+</body>
+</html>
